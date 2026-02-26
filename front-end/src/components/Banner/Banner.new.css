@@ -1,0 +1,231 @@
+/* ===== BANNER CONTAINER ===== */
+.main-banner-outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-secondary), #ffffff 50%);
+  margin: 0;
+  padding: var(--spacing-lg) 0;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.main-banner-center-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 98%;
+  max-width: 1350px;
+  margin: 0;
+  padding: var(--spacing-lg);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+}
+
+.main-banner-center-bg:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== BANNER IMAGE ===== */
+.main-banner-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.main-banner-img {
+  width: 100%;
+  height: clamp(150px, 32vw, 420px);
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: var(--bg-secondary);
+  display: block;
+  margin: 0 auto;
+  transition: all var(--transition-base);
+  animation: imageSlideIn 0.5s ease-out;
+}
+
+@keyframes imageSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== NAVIGATION DOTS ===== */
+.main-banner-dots {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-banner-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--border-color);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+  padding: 0;
+  position: relative;
+}
+
+.main-banner-dot:hover {
+  background: var(--text-tertiary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px rgba(255, 107, 99, 0.2);
+}
+
+.main-banner-dot:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(255, 107, 99, 0.3);
+}
+
+.main-banner-dot.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  width: 32px;
+  height: 12px;
+  border-radius: 20px;
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(255, 107, 99, 0.3);
+  animation: dotExpand 0.3s ease-out;
+}
+
+@keyframes dotExpand {
+  from {
+    width: 12px;
+    border-radius: 50%;
+  }
+  to {
+    width: 32px;
+    border-radius: 20px;
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .main-banner-center-bg {
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+  }
+
+  .main-banner-img {
+    border-radius: var(--radius-md);
+    height: clamp(120px, 28vw, 350px);
+  }
+
+  .main-banner-dots {
+    gap: var(--spacing-sm);
+  }
+
+  .main-banner-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .main-banner-dot.active {
+    width: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-banner-outer {
+    padding: var(--spacing-md) 0;
+  }
+
+  .main-banner-center-bg {
+    width: 95%;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .main-banner-img-wrapper {
+    padding: 0;
+  }
+
+  .main-banner-img {
+    border-radius: var(--radius-md);
+    height: clamp(100px, 40vw, 250px);
+  }
+
+  .main-banner-dots {
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+
+  .main-banner-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .main-banner-dot.active {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-banner-outer {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .main-banner-center-bg {
+    width: 96%;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .main-banner-img {
+    height: clamp(75px, 35vw, 180px);
+    border-radius: var(--radius-md);
+  }
+
+  .main-banner-dots {
+    gap: 6px;
+    margin-top: var(--spacing-sm);
+  }
+
+  .main-banner-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .main-banner-dot.active {
+    width: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .main-banner-img {
+    height: clamp(60px, 30vw, 140px);
+  }
+
+  .main-banner-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .main-banner-dot.active {
+    width: 18px;
+  }
+}

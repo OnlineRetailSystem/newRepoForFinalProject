@@ -1,0 +1,337 @@
+/* ===== SEARCH RESULT BACKGROUND ===== */
+.sr-bg {
+  background: linear-gradient(135deg, var(--bg-secondary), #ffffff 50%);
+  min-height: 60vh;
+  width: 100%;
+  padding: var(--spacing-2xl) 0 var(--spacing-4xl);
+}
+
+.sr-loading,
+.sr-empty {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: var(--spacing-4xl) 0;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+/* ===== RESULT LIST CONTAINER ===== */
+.sr-result-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  padding: 0 var(--spacing-xl);
+}
+
+/* ===== RESULT CARD ===== */
+.sr-result-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  position: relative;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.sr-result-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff, rgba(255, 107, 99, 0.02));
+}
+
+/* ===== IMAGE SIDE ===== */
+.sr-result-imgside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+  gap: var(--spacing-md);
+}
+
+.sr-result-img {
+  width: 140px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.sr-result-card:hover .sr-result-img {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== CHECKBOX LABEL ===== */
+.sr-checkbox-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  user-select: none;
+  cursor: pointer;
+  transition: color var(--transition-base);
+  font-weight: 600;
+}
+
+.sr-checkbox-label:hover {
+  color: var(--primary-color);
+}
+
+.sr-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+/* ===== RESULT DETAILS ===== */
+.sr-result-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.sr-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.sr-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1 1 0;
+}
+
+/* ===== RATING BADGE ===== */
+.sr-badge-rating {
+  background: linear-gradient(135deg, var(--success-color), #229954);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+/* ===== PRODUCT TITLE ===== */
+.sr-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+/* ===== PRICE BLOCK ===== */
+.sr-price-block {
+  text-align: right;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: flex-end;
+}
+
+.sr-price {
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
+}
+
+.sr-badge-assured {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  color: white;
+  font-weight: 700;
+  padding: 3px 10px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-purple));
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+/* ===== FEATURES LIST ===== */
+.sr-features {
+  margin: var(--spacing-md) 0 0 0;
+  padding-left: var(--spacing-xl);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  list-style: none;
+  line-height: 1.6;
+}
+
+.sr-features li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  transition: color var(--transition-base);
+}
+
+.sr-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.sr-result-card:hover .sr-features li {
+  color: var(--text-primary);
+}
+
+/* ===== BANK OFFER ===== */
+.sr-bank-offer {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  background: rgba(39, 174, 96, 0.05);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-left: 3px solid var(--success-color);
+  border-radius: var(--radius-md);
+  line-height: 1.5;
+}
+
+.bank-offer-green {
+  color: var(--success-color);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .sr-result-list {
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+  }
+
+  .sr-result-card {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+
+  .sr-title-row {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+  }
+
+  .sr-price-block {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .sr-title {
+    font-size: var(--font-size-base);
+  }
+
+  .sr-price {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .sr-result-list {
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-lg);
+  }
+
+  .sr-result-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .sr-result-imgside {
+    min-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .sr-result-img {
+    width: 100px;
+    height: 120px;
+    min-width: 100px;
+  }
+
+  .sr-checkbox-label {
+    flex: 1;
+  }
+
+  .sr-result-details {
+    gap: var(--spacing-sm);
+  }
+
+  .sr-features {
+    padding-left: var(--spacing-lg);
+  }
+
+  .sr-features li {
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+  }
+
+  .sr-bank-offer {
+    padding: var(--spacing-sm);
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 430px) {
+  .sr-result-list {
+    padding: 0 var(--spacing-xs);
+  }
+
+  .sr-result-card {
+    padding: var(--spacing-sm);
+  }
+
+  .sr-result-img {
+    width: 80px;
+    height: 100px;
+    min-width: 80px;
+  }
+
+  .sr-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .sr-price {
+    font-size: var(--font-size-lg);
+  }
+
+  .sr-price-block {
+    min-width: 120px;
+  }
+
+  .sr-features {
+    padding-left: var(--spacing-md);
+  }
+
+  .sr-features li {
+    padding-left: var(--spacing-sm);
+    margin-bottom: 3px;
+  }
+}

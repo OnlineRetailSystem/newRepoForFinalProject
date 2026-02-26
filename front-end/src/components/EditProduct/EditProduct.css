@@ -1,0 +1,290 @@
+/* ===== EDIT PRODUCT BACKGROUND ===== */
+.addproduct-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-secondary), #ffffff 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+}
+
+/* ===== EDIT PRODUCT FORM ===== */
+.addproduct-form {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+  padding: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  border: 1.5px solid var(--border-color);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== FORM TITLE ===== */
+.addproduct-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  letter-spacing: -0.01em;
+  text-align: center;
+  background: linear-gradient(135deg, var(--accent-purple), var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== FORM GROUP ===== */
+.addproduct-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: 0;
+}
+
+.addproduct-form-group label {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== FORM ROW (FOR SIDE-BY-SIDE FIELDS) ===== */
+.addproduct-form-row {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.addproduct-form-row .addproduct-form-group {
+  flex: 1;
+}
+
+/* ===== INPUT FIELD ===== */
+.addproduct-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition-base);
+  font-family: var(--font-primary);
+}
+
+.addproduct-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.addproduct-input:focus {
+  border-color: var(--accent-purple);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(155, 89, 182, 0.1);
+}
+
+.addproduct-input:disabled {
+  background: var(--bg-secondary);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== TEXTAREA ===== */
+.addproduct-textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.addproduct-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.addproduct-textarea:focus {
+  border-color: var(--accent-purple);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(155, 89, 182, 0.1);
+}
+
+/* ===== SELECT DROPDOWN ===== */
+.addproduct-select,
+select {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition-base);
+  font-family: var(--font-primary);
+  cursor: pointer;
+}
+
+.addproduct-select:focus,
+select:focus {
+  border-color: var(--accent-purple);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(155, 89, 182, 0.1);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.addproduct-btn {
+  background: linear-gradient(135deg, var(--accent-purple), #c8589c);
+  color: white;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  margin-top: var(--spacing-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  width: 100%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.addproduct-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-base), height var(--transition-base);
+}
+
+.addproduct-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.addproduct-btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.addproduct-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.addproduct-error {
+  color: white;
+  font-size: var(--font-size-sm);
+  background: linear-gradient(135deg, var(--danger-color), #c0392b);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 600;
+  text-align: center;
+  border: 1.5px solid var(--danger-color);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .addproduct-bg {
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
+  }
+
+  .addproduct-form {
+    max-width: 95%;
+    padding: var(--spacing-xl);
+  }
+
+  .addproduct-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .addproduct-form-row {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .addproduct-bg {
+    padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-2xl);
+  }
+
+  .addproduct-form {
+    max-width: 100%;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+  }
+
+  .addproduct-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .addproduct-input,
+  .addproduct-textarea,
+  .addproduct-select {
+    padding: var(--spacing-md) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .addproduct-form-group label {
+    font-size: var(--font-size-xs);
+  }
+
+  .addproduct-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+
+  .addproduct-error {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
+
+  .addproduct-form-row {
+    gap: var(--spacing-sm);
+  }
+}
